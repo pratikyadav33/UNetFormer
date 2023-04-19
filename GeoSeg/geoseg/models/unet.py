@@ -412,7 +412,7 @@ class PatchEmbed(nn.Module):
         norm_layer (nn.Module, optional): Normalization layer. Default: None
     """
 
-    def __init__(self, patch_size=4, in_chans=1, embed_dim=96, norm_layer=None):
+    def __init__(self, patch_size=4, in_chans=3, embed_dim=96, norm_layer=None):
         super().__init__()
         patch_size = to_2tuple(patch_size)
         self.patch_size = patch_size
@@ -477,7 +477,7 @@ class SwinTransformer(nn.Module):
     def __init__(self,
                  pretrain_img_size=224,
                  patch_size=4,
-                 in_chans=1,
+                 in_chans=3,
                  embed_dim=128,
                  depths=[2, 2, 18, 2],
                  num_heads=[4, 8, 16, 32],
@@ -958,7 +958,7 @@ class FTUNetFormer(nn.Module):
 
 
 def ft_unetformer(pretrained=True, num_classes=16, freeze_stages=-1, decoder_channels=256,
-                  weight_path='/home/pratiky1/nilanb_ada/users/pratiky1/unet/pretrain_weights/stseg_base.pth'):
+                  weight_path=None):
     model = FTUNetFormer(num_classes=num_classes,
                          freeze_stages=freeze_stages,
                          embed_dim=128,
