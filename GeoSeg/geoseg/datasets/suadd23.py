@@ -91,7 +91,7 @@ def val_aug(img, mask):
 
 
 class LoveDATrainDataset(Dataset):
-    def __init__(self, data_root='data/train', img_dir='inputs', mosaic_ratio=0.25,
+    def __init__(self, data_root='/home/pratiky1/nilanb_ada/users/pratiky1/unet/data/train', img_dir='inputs', mosaic_ratio=0.25,
                  mask_dir='mask', img_suffix='.png', mask_suffix='.png',
                  transform=train_aug, img_size=ORIGIN_IMG_SIZE):
         self.data_root = data_root
@@ -197,7 +197,7 @@ class LoveDATrainDataset(Dataset):
         return img, mask
 
 
-loveda_val_dataset = LoveDATrainDataset(data_root='data/val', mosaic_ratio=0.0,
+loveda_val_dataset = LoveDATrainDataset(data_root='/home/pratiky1/nilanb_ada/users/pratiky1/unet/data/val', mosaic_ratio=0.0,
                                         transform=val_aug)
 
 

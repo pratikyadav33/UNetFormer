@@ -7,9 +7,9 @@ from catalyst import utils
 
 # training hparam
 max_epoch = 30
-ignore_index = len(CLASSES)
-train_batch_size = 4
-val_batch_size = 4
+ignore_index = 255
+train_batch_size = 16
+val_batch_size = 16
 lr = 6e-4
 weight_decay = 2.5e-4
 backbone_lr = 6e-5
@@ -19,9 +19,9 @@ num_classes = len(CLASSES)
 classes = CLASSES
 
 weights_name = "ftunetformer-768-crop-ms-e45"
-weights_path = "model_weights/loveda/{}".format(weights_name)
+weights_path = "/home/pratiky1/nilanb_ada/users/pratiky1/unet/model_weights/suadd/{}".format(weights_name)
 test_weights_name = "last"
-log_name = 'loveda/{}'.format(weights_name)
+log_name = 'suadd/{}'.format(weights_name)
 monitor = 'val_mIoU'
 monitor_mode = 'max'
 save_top_k = 1
@@ -43,10 +43,10 @@ use_aux_loss = False
 
 # define the dataloader
 
-train_dataset = LoveDATrainDataset(data_root='data/train',transform=train_aug)
+train_dataset = LoveDATrainDataset(data_root='/home/pratiky1/nilanb_ada/users/pratiky1/unet/data/train',transform=train_aug)
 
 val_dataset = loveda_val_dataset
-test_dataset = LoveDATestDataset(data_root='data/val')
+test_dataset = LoveDATestDataset(data_root='/home/pratiky1/nilanb_ada/users/pratiky1/unet/data/val')
 
 train_loader = DataLoader(dataset=train_dataset,
                           batch_size=train_batch_size,

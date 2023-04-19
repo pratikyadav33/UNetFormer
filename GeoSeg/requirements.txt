@@ -10,3 +10,4 @@ scipy
 matplotlib
 einops
 addict
+torchtext==0.10.0

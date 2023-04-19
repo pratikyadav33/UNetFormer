@@ -958,7 +958,7 @@ class FTUNetFormer(nn.Module):
 
 
 def ft_unetformer(pretrained=True, num_classes=16, freeze_stages=-1, decoder_channels=256,
-                  weight_path='pretrain_weights/stseg_base.pth'):
+                  weight_path='/home/pratiky1/nilanb_ada/users/pratiky1/unet/pretrain_weights/stseg_base.pth'):
     model = FTUNetFormer(num_classes=num_classes,
                          freeze_stages=freeze_stages,
                          embed_dim=128,
